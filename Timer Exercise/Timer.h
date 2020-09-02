@@ -1,6 +1,8 @@
 #ifndef TIMER_H
 #define TIMER_H
 
+#define ERROR_PTHREAD_CREATE 1001
+
 typedef struct {
   int period; // Time between calls of TimerFcn in ms
   int tasks_to_execute; // How many times TimerFcn is ran
@@ -12,7 +14,7 @@ typedef struct {
   void *user_data; // Pointer to user data
 } timer;
 
-void start(timer *t);
-void startat(timer *t, int year, int month, int day, int h, int min, int sec);
+int start(timer *t);
+int startat(timer *t, int year, int month, int day, int h, int min, int sec);
 
 #endif
