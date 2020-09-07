@@ -26,7 +26,7 @@ int startat(timer *t, int year, int month, int day, int h, int min, int sec){
     long int extra_delay = difftime(time(NULL),mktime(&runtime));
     
     if( extradelay > 0 ){
-        t->delay += extradelay;
+        t->start_delay += extradelay;
     }
     
     return start(t);
